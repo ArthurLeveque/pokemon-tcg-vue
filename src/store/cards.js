@@ -105,7 +105,7 @@ const cards = {
       //On récupère les données dans une variable
       const response = await axios.get(url, {
         headers: {
-          "X-Api-Key" : 'abf9e89c-d5ef-42c5-a29f-c0d8295775a4'
+          "X-Api-Key" : process.env.POKEMON_TCG_API_KEY
         }
       });
       //On stock les données récupérées et on arrête le chargement
@@ -118,7 +118,7 @@ const cards = {
 
       const response = await axios.get(url, {
         headers: {
-          "X-Api-Key" : 'abf9e89c-d5ef-42c5-a29f-c0d8295775a4'
+          "X-Api-Key" : process.env.POKEMON_TCG_API_KEY
         }
       });
 
@@ -130,7 +130,7 @@ const cards = {
 
       const response = await axios.get(url, {
         headers: {
-          "X-Api-Key" : 'abf9e89c-d5ef-42c5-a29f-c0d8295775a4'
+          "X-Api-Key" : process.env.POKEMON_TCG_API_KEY
         }
       });
 
@@ -142,7 +142,7 @@ const cards = {
 
       const response = await axios.get(url, {
         headers: {
-          "X-Api-Key" : 'abf9e89c-d5ef-42c5-a29f-c0d8295775a4'
+          "X-Api-Key" : process.env.POKEMON_TCG_API_KEY
         }
       });
 
@@ -165,7 +165,7 @@ const cards = {
 
       const requests = cards.map(card => axios.get(`https://api.pokemontcg.io/v2/cards?q=id:"${card['card_id']}"`, {
         headers: {
-          "X-Api-Key" : 'abf9e89c-d5ef-42c5-a29f-c0d8295775a4'
+          "X-Api-Key" : process.env.POKEMON_TCG_API_KEY
         }
       }));
       const responses = await Promise.all(requests);
